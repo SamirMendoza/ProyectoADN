@@ -18,9 +18,6 @@ public class ReservationRestController {
 	
 	private CreateReservation createReservation;
 	
-
-
-	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
 	public Reservation createR(@RequestBody ReservationCommand reservationCommand){ 

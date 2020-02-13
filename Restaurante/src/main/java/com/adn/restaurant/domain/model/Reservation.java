@@ -4,85 +4,59 @@ import java.util.Date;
 
 public class Reservation {
 	
-	private Long codigo;
-	private Long idMesa;
-	private Date fechaSolicitud;
-	private Date fechaReserva;
-	private double precio;
-	private String nombre;
+	private Long code;
+	private Long idTable;
+	private Date dateRequest;
+	private Date dateReservation;
+	private double price;
+	private String name;
 	
-
-	public Reservation(Long idMesa, Date fechaSolicitud, Date fechaReserva, double precio, String nombre) {
-		super();
-		this.idMesa = idMesa;
-		this.fechaSolicitud = fechaSolicitud;
-		this.fechaReserva = fechaReserva;
-		this.precio = precio;
-		this.nombre = nombre;
-	}
-
-	public Reservation(Long codigo, Long idMesa, Date fechaSolicitud, Date fechaReserva, double precio, String nombre) {
-		super();
-		this.codigo = codigo;
-		this.idMesa = idMesa;
-		this.fechaSolicitud = fechaSolicitud;
-		this.fechaReserva = fechaReserva;
-		this.precio = precio;
-		this.nombre = nombre;
-	}
-
-
-
-	public Long getCodigo() {
-		return codigo;
-	}
-
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
+	public Reservation(Long idTable, Date dateRequest, Date dateReservation, double price, String name) {
+		this.idTable = idTable;
+		this.dateRequest = dateRequest;
+		this.dateReservation = dateReservation;
+		this.price = price;
+		this.name = name;
 	}
 	
-	public Long getIdMesa() {
-		return idMesa;
+	public Reservation() {
 	}
 
-	public void setIdMesa(Long idMesa) {
-		this.idMesa = idMesa;
+	public Long getCode() {
+		return code;
 	}
-
-
-
-	public Date getFechaSolicitud() {
-		return fechaSolicitud;
+	public void setCode(Long code) {
+		this.code = code;
 	}
-
-	public void setFechaSolicitud(Date fechaSolicitud) {
-		this.fechaSolicitud = fechaSolicitud;
+	public Long getIdTable() {
+		return idTable;
 	}
-
-	public Date getFechaReserva() {
-		return fechaReserva;
+	public void setIdTable(Long idTable) {
+		this.idTable = idTable;
 	}
-
-	public void setFechaReserva(Date fechaReserva) {
-		this.fechaReserva = fechaReserva;
+	public Date getDateRequest() {
+		return dateRequest;
 	}
-
-	public double getPrecio() {
-		return precio;
+	public void setDateRequest(Date dateRequest) {
+		this.dateRequest = dateRequest;
 	}
-
-	public void setPrecio(double precio) {
-		this.precio = precio;
+	public Date getDateReservation() {
+		return dateReservation;
 	}
-
-	public String getNombre() {
-		return nombre;
+	public void setDateReservation(Date dateReservation) {
+		this.dateReservation = dateReservation;
 	}
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public double getPrice() {
+		return price;
 	}
-	
-	
+	public void setPrice(double price) {
+		this.price = price;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
 	
 }

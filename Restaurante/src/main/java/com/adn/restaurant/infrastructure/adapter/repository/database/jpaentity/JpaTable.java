@@ -1,67 +1,49 @@
 package com.adn.restaurant.infrastructure.adapter.repository.database.jpaentity;
 
-import java.util.Date;
-
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import com.adn.restaurant.domain.model.Table;
 
 
-@Entity (name = "mesa")
+@Entity (name = "table")
 
 public class JpaTable extends Table{
 	
+	
 	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-	@Column
-	private boolean disponibilidad;
-	@Column
-	private Date fechaDisponible;
+	@NotNull
+	private boolean availability;
 	
-	
-	
+	public JpaTable(Long id, boolean availability) {
+		this.id = id;
+		this.availability = availability;
+	}
+
 	public Long getId() {
 		return id;
 	}
-
-
 
 	public void setId(Long id) {
 		this.id = id;
 	}
 
-
-
-	public boolean isDisponibilidad() {
-		return disponibilidad;
+	public boolean isAvailability() {
+		return availability;
 	}
 
-
-
-	public void setDisponibilidad(boolean disponibilidad) {
-		this.disponibilidad = disponibilidad;
+	public void setAvailability(boolean availability) {
+		this.availability = availability;
 	}
 
-
-
-	public Date getFechaDisponible() {
-		return fechaDisponible;
+	public JpaTable() {
 	}
-
-
-
-	public void setFechaDisponible(Date fechaDisponible) {
-		this.fechaDisponible = fechaDisponible;
-	}
-
-	public JpaTable(Long id, boolean disponibilidad, Date fechaDisponible) {
-		super(id, disponibilidad, fechaDisponible);
-	}
+	
 	
 	
 }

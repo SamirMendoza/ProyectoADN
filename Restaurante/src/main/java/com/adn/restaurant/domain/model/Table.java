@@ -1,40 +1,33 @@
 package com.adn.restaurant.domain.model;
 
-import java.util.Date;
-
 public class Table {
 	
 	private Long id;
-	private boolean disponibilidad;
-	private Date fechaDisponible;
+	private boolean availability;
 	
-	
-	public Table(Long id, boolean disponibilidad, Date fechaDisponible) {
-		super();
+	public Table(Long id, boolean availability) {
 		this.id = id;
-		this.disponibilidad = disponibilidad;
-		this.fechaDisponible = fechaDisponible;
+		this.availability = availability;
 	}
-	
+
 	public Long getId() {
 		return id;
 	}
+
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public boolean isDisponibilidad() {
-		return disponibilidad;
-	}
-	public void setDisponibilidad(boolean disponibilidad) {
-		this.disponibilidad = disponibilidad;
+
+	public boolean isAvailability() {
+		return availability;
 	}
 
-	public Date getFechaDisponible() {
-		return fechaDisponible;
+	public void setAvailability(boolean availability) {
+		this.availability = availability;
 	}
 
-	public void setFechaDisponible(Date fechaDisponible) {
-		this.fechaDisponible = fechaDisponible;
+	public Table() {
 	}
+	
 	
 }

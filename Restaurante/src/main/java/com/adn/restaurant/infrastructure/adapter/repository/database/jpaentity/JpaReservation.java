@@ -2,113 +2,69 @@ package com.adn.restaurant.infrastructure.adapter.repository.database.jpaentity;
 
 import java.util.Date;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 import com.adn.restaurant.domain.model.Reservation;
 
-@Entity (name = "reserva")
-
+@Entity (name = "reservation")
 public class JpaReservation extends Reservation{
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long codigo;
-	@Column
-	private Long idMesa;
-	@Column
-	private Date fechaSolicitud;
-	@Column
-	private Date fechaReserva;
-	@Column
-	private double precio;
-	@Column
-	private String nombre;
+	private Long code;
+	@NotNull
+	private Long idTable;
+	@NotNull
+	private Date dateRequest;
+	@NotNull
+	private Date dateReservation;
+	@NotNull
+	private double price;
+	private String name;
 	
 	
-
-	public Long getCodigo() {
-		return codigo;
+	public Long getCode() {
+		return code;
 	}
-
-
-
-	public void setCodigo(Long codigo) {
-		this.codigo = codigo;
+	public void setCode(Long code) {
+		this.code = code;
 	}
-
-
-
-	public Long getIdMesa() {
-		return idMesa;
+	public Long getIdTable() {
+		return idTable;
 	}
-
-
-
-	public void setIdMesa(Long idMesa) {
-		this.idMesa = idMesa;
+	public void setIdTable(Long idTable) {
+		this.idTable = idTable;
 	}
-
-
-
-	public Date getFechaSolicitud() {
-		return fechaSolicitud;
+	public Date getDateRequest() {
+		return dateRequest;
 	}
-
-
-
-	public void setFechaSolicitud(Date fechaSolicitud) {
-		this.fechaSolicitud = fechaSolicitud;
+	public void setDateRequest(Date dateRequest) {
+		this.dateRequest = dateRequest;
 	}
-
-
-
-	public Date getFechaReserva() {
-		return fechaReserva;
+	public Date getDateReservation() {
+		return dateReservation;
 	}
-
-
-
-	public void setFechaReserva(Date fechaReserva) {
-		this.fechaReserva = fechaReserva;
+	public void setDateReservation(Date dateReservation) {
+		this.dateReservation = dateReservation;
 	}
-
-
-
-	public double getPrecio() {
-		return precio;
+	public double getPrice() {
+		return price;
 	}
-
-
-
-	public void setPrecio(double precio) {
-		this.precio = precio;
+	public void setPrice(double price) {
+		this.price = price;
 	}
-
-
-
-	public String getNombre() {
-		return nombre;
+	public String getName() {
+		return name;
 	}
-
-
-
-	public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public void setName(String name) {
+		this.name = name;
 	}
-
-
-
-	public JpaReservation(Long idMesa, Date fechaSolicitud, Date fechaReserva, double precio, String nombre) {
-		super(idMesa, fechaSolicitud, fechaReserva, precio, nombre);
+	public JpaReservation() {
 	}
-	
-	
-
-	
 	
 
 }

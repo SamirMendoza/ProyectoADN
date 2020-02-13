@@ -1,22 +1,23 @@
 package com.adn.restaurant.infrastructure.adapter.repository.database.mapper;
 
-import org.springframework.stereotype.Component;
+import java.util.List;
+
+import org.mapstruct.Mapper;
+import org.mapstruct.factory.Mappers;
 
 import com.adn.restaurant.domain.model.Table;
 import com.adn.restaurant.infrastructure.adapter.repository.database.jpaentity.JpaTable;
 
-@Component
-public class JpaTableMapper {
+
+@Mapper
+public interface JpaTableMapper {
 	
-	private JpaTableMapper() {
-		
-	}
-	
-	public static Table aDomino(JpaTable entity) {
-		return new Table(entity.getId(), entity.isDisponibilidad(), entity.getFechaDisponible());			
-	}
-	
-	public static JpaTable aEntidad(Table dominio) {		
-		return new JpaTable(dominio.getId(), dominio.isDisponibilidad(), dominio.getFechaDisponible());			
-	}
+	JpaTableMapper MAPPER = Mappers.getMapper(JpaTableMapper.class);
+
+    Table toTable(JpaTable jpaTable);
+
+    List<Table> toTables(List<JpaTable> jpaTables);
+
+    JpaTable toJpaTable(Table table);
+
 }

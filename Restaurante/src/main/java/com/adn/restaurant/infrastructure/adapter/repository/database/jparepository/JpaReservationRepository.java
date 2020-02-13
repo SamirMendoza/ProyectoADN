@@ -4,10 +4,9 @@ import org.springframework.stereotype.Repository;
 
 import com.adn.restaurant.infrastructure.adapter.repository.database.jpaentity.JpaReservation;
 
-import org.springframework.data.repository.CrudRepository;
-
+import org.springframework.data.jpa.repository.JpaRepository;
 
 @Repository
-public interface JpaReservationRepository extends CrudRepository<JpaReservation, Long>{
+public interface JpaReservationRepository extends  JpaRepository<JpaReservation, Long>{
 	
 }

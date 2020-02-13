@@ -1,7 +1,5 @@
 package com.adn.restaurant.infrastructure.adapter.repository;
 
-import java.util.List;
-
 import javax.transaction.Transactional;
 
 import org.springframework.stereotype.Repository;
@@ -16,20 +14,15 @@ import com.adn.restaurant.infrastructure.adapter.repository.database.mapper.JpaR
 @Transactional
 public class MysqlReservationRepository implements ReservationRepository {
 	
-	JpaReservationRepository reservaRepositorioJpa;
+	JpaReservationRepository jpaReservationRepository;
 	
-	public MysqlReservationRepository(JpaReservationRepository reservaRepositorioJpa) {
-		this.reservaRepositorioJpa = reservaRepositorioJpa;
+	public MysqlReservationRepository(JpaReservationRepository jpaReservationRepository) {
+		this.jpaReservationRepository = jpaReservationRepository;
 	}
 
 	@Override
-	public void save(Reservation reserva) {
-		reservaRepositorioJpa.save(JpaReservationMapper.aEntidad(reserva));
-	}
-
-	@Override
-	public List<Reservation> findAll() {
-		return JpaReservationMapper.aDomino(reservaRepositorioJpa.findAll());
+	public void save(Reservation reservation) {
+		jpaReservationRepository.save(JpaReservationMapper.MAPPER.toJpaReservation(reservation));
 	}
 
 	
