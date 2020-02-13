@@ -4,19 +4,19 @@ pipeline {
     label 'Slave_Induccion'
   }
 
-  //Opciones especÃ­ficas de Pipeline dentro del Pipeline
+  //Opciones específicas de Pipeline dentro del Pipeline
   options {
     	buildDiscarder(logRotator(numToKeepStr: '3'))
  	disableConcurrentBuilds()
   }
 
-  //Una secciÃ³n que define las herramientas â€œpreinstaladasâ€ en Jenkins
+  //Una sección que define las herramientas “preinstaladas” en Jenkins
   tools {
-    jdk 'JDK8_Centos' //Preinstalada en la ConfiguraciÃ³n del Master
-    gradle 'Gradle4.5_Centos' //Preinstalada en la ConfiguraciÃ³n del Master
+    jdk 'JDK8_Centos' //Preinstalada en la Configuración del Master
+    gradle 'Gradle4.5_Centos' //Preinstalada en la Configuración del Master
   }
 
-  //AquÃ­ comienzan los â€œitemsâ€ del Pipeline
+  //Aquí comienzan los “items” del Pipeline
   stages{
     stage('Checkout') {
       steps{
@@ -33,7 +33,7 @@ pipeline {
 
     stage('Static Code Analysis') {
       steps{
-        echo '------------>AnÃ¡lisis de cÃ³digo estÃ¡tico<------------'
+        echo '------------>Análisis de código estático<------------'
         withSonarQubeEnv('Sonar') {
 sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
         }
